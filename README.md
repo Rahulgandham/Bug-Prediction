@@ -1,1 +1,9 @@
 # Bug-Prediction
+
+Software maintenance in large open-source ecosystems hinges on rapid, accurate bug triage. The Eclipse project alone accumulates tens of thousands of issue reports annually, spanning multiple components and severity levels. Traditionally, human experts manually classify and route these reports, a process that is labour-intensive, inconsistent, and unscalable as project size grows. Prior attempts to automate classification using single machine-learning models—such as Support Vector Machines (SVM) or Logistic Regression—have yielded moderate accuracy (≈70-75%) but often require extensive feature engineering and fail to generalize across evolving bug corpora. This research addresses the urgent need for a scalable, ensemble-driven framework capable of automating eclipse bug classification with high fidelity. We propose an end-to-end system that ingests raw bug descriptions, applies rigorous data preprocessing (tokenization, stop-word removal, lemmatization), and converts textual data into numerical vectors via Term Frequency–Inverse Document Frequency (TF-IDF). Five classifiers - SVM, Random Forest Classifier (RFC), Logistic Regression Classifier (LRC), Extra-Trees Voting (EV) ensemble, and Extreme Gradient Boosting (XGBoost) are trained and evaluated on a curated eclipse–Mozilla dataset. Our proposed system integrates a user-friendly GUI to guide non-expert users through data upload, preprocessing visualization, and model selection. 
+Under a 70/30 train-test split, performance metrics reveal: 
+SVM achieves 74.23% accuracy, 83.03% precision, 73.94% recall, and 75.24% F₁-score ; 
+RFC records 83.51% accuracy, 87.68% precision, 83.40% recall, and 84.09% F₁; 
+LRC attains 70.10% accuracy, 75.06% precision, 70.19% recall, and 71.10% F₁; 
+EV yields 89.69% accuracy, 91.10% precision, 90.29% recall, and 90.21% F₁; 
+while XGBoost outperforms all with 92.27% accuracy, 92.91% precision, 92.65% recall, and 92.50% F₁-score.
